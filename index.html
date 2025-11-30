@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LightBag Web App</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="phone-container">
+    <div class="phone-frame">
+
+        <!-- Üst çubuk -->
+        <div class="status-bar">
+            <span id="time">12:30</span>
+            <span>📶 WiFi</span>
+            <span>🔋 85%</span>
+        </div>
+
+        <!-- Şifre ekranı -->
+        <div class="phone-screen" id="loginScreen">
+            <h2 class="lb-title">LightBag Login</h2>
+            <input type="password" id="passwordInput" placeholder="Enter password">
+            <button onclick="login()">Enter</button>
+        </div>
+
+        <!-- Ana ekran -->
+        <div class="phone-screen" id="homeScreen">
+            <h3 class="phone-title">My Apps</h3>
+            <div class="app-grid">
+
+                <div class="app-icon" onclick="openLightBag()">
+                    <img src="https://cdn-icons-png.flaticon.com/512/891/891462.png">
+                    <p>LightBag</p>
+                </div>
+
+                <div class="app-icon" onclick="fakeApp()">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1827/1827951.png">
+                    <p>Gallery</p>
+                </div>
+
+                <div class="app-icon" onclick="fakeApp()">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3524/3524631.png">
+                    <p>Settings</p>
+                </div>
+
+                <div class="app-icon" onclick="fakeApp()">
+                    <img src="https://cdn-icons-png.flaticon.com/512/747/747310.png">
+                    <p>Camera</p>
+                </div>
+
+                <div class="app-icon" onclick="fakeApp()">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+                    <p>Music</p>
+                </div>
+
+                <div class="app-icon" onclick="fakeApp()">
+                    <img src="https://cdn-icons-png.flaticon.com/512/732/732251.png">
+                    <p>Messages</p>
+                </div>
+
+                <div class="app-icon" onclick="fakeApp()">
+                    <img src="https://cdn-icons-png.flaticon.com/512/709/709592.png">
+                    <p>Game</p>
+                </div>
+
+                <div class="app-icon" onclick="fakeApp()">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828859.png">
+                    <p>Notes</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- LightBag Uygulaması -->
+        <div class="phone-screen" id="lightBagScreen">
+
+            <h2 class="lb-title">LightBag</h2>
+
+            <!-- Sekmeler -->
+            <div class="tabs">
+                <button onclick="showTab('today')" class="tab-btn active">Today</button>
+                <button onclick="showTab('backpack')" class="tab-btn">Backpack</button>
+                <button onclick="showTab('suggestions')" class="tab-btn">Suggestions</button>
+                <button onclick="showTab('tomorrow')" class="tab-btn">Tomorrow</button>
+                <button onclick="showTab('homework')" class="tab-btn">Homework</button>
+            </div>
+
+            <!-- Today -->
+            <div id="today" class="tab-content">
+                <p><strong>Today's Classes:</strong></p>
+                <ul id="todayList"></ul>
+            </div>
+
+            <!-- Backpack -->
+            <div id="backpack" class="tab-content" style="display:none;">
+                <p><strong>Backpack Contents:</strong></p>
+                <ul id="backpackList"></ul>
+                <p id="totalWeight">Total Weight: 0 kg</p>
+            </div>
+
+            <!-- Suggestions -->
+            <div id="suggestions" class="tab-content" style="display:none;">
+                <p><strong>Suggestions to reduce weight:</strong></p>
+                <ul id="suggestList"></ul>
+            </div>
+
+            <!-- Tomorrow -->
+            <div id="tomorrow" class="tab-content" style="display:none;">
+                <p><strong>Tomorrow's Materials:</strong></p>
+                <ul id="tomorrowList"></ul>
+            </div>
+
+            <!-- Homework -->
+            <div id="homework" class="tab-content" style="display:none;">
+                <p><strong>Upcoming Homework:</strong></p>
+                <ul id="homeworkList"></ul>
+            </div>
+
+            <button class="back-btn" onclick="goHome()">◀ Back</button>
+        </div>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
